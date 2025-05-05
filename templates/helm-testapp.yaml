@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: helm-testapp
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: argocd
+    server: {{ .Values.spec.destination.server }}
+  project: default
+  source:
+    repoURL: https://github.com/rodmhgl/k8s_test_app/
+    path: k8s-test-app
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml
