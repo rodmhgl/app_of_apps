@@ -11,6 +11,6 @@ spec:
     server: {{ .Values.spec.destination.server }}
   project: default
   source:
-  repoURL: https://github.com/rodmhgl/k8s_test_app
-  path: kubernetes/manifests
-  targetRevision: HEAD
+    repoURL: https://github.com/rodmhgl/k8s_test_app
+    path: kubernetes/manifests
+    targetRevision: HEAD
