@@ -14,3 +14,9 @@ spec:
     repoURL: https://github.com/rodmhgl/k8s_test_app
     path: kubernetes/manifests
     targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
