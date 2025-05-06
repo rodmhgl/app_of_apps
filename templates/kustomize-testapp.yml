@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: helm-testapp
+  name: kustomize-testapp
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
