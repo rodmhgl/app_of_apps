@@ -7,16 +7,16 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
-destination:
-  server: https://kubernetes.default.svc
-  namespace: kustomize-testapp
-source:
-  repoURL: https://github.com/rodmhgl/k8s_test_app/
-  path: kustomize/overlays/development
-  targetRevision: HEAD
-syncPolicy:
-  automated:
-    prune: true
-    selfHeal: true
-  syncOptions:
-    - CreateNamespace=true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kustomize-testapp
+  source:
+    repoURL: https://github.com/rodmhgl/k8s_test_app/
+    path: kustomize/overlays/development
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
