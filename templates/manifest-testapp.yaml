@@ -8,7 +8,7 @@ metadata:
 spec:
   destination:
     namespace: manifest-testapp
-    server: https://eztcaloadz-vkgfdjkq.hcp.eastus.azmk8s.io:443
+    server: https://kubernetes.default.svc # https://eztcaloadz-vkgfdjkq.hcp.eastus.azmk8s.io:443
   project: default
   source:
     repoURL: https://github.com/rodmhgl/k8s_test_app
