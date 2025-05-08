@@ -8,7 +8,7 @@ metadata:
 spec:
   destination:
     namespace: helm-wordpress
-    server: { ? { .Values.spec.destination.server } }
+    server: {{ .Values.spec.destination.server }}
   project: default
   source:
     repoURL: https://github.com/rodmhgl/argocd_apps/
