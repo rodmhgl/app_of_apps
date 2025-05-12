@@ -1,0 +1,11 @@
+ingress-nginx:
+  controller:
+    watchIngressWithoutClass: true
+    hostPort:
+      enabled: true
+      http: 80
+      https: 443
+    service:
+      annotations:
+        service.beta.kubernetes.io/azure-load-balancer-health-probe-request-path: "/healthz"
+      externalTrafficPolicy: Local
