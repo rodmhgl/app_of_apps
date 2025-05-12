@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/rodmhgl/app_of_apps
-    path: charts/ingress-nginx
+    path: ../charts/ingress-nginx
     targetRevision: HEAD
     helm:
       valueFiles:
