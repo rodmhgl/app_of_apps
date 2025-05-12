@@ -6,7 +6,7 @@ cert-manager:
     enabled: true
 
   prometheus:
-    enabled: false
+    enabled: true
   
   podLabels:
     azure.workload.identity/use: "true"
