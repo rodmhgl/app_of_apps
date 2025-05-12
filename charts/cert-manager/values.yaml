@@ -13,3 +13,4 @@ cert-manager:
 
   serviceAccount:
     labels:
+      azure.workload.identity/use: "true"
