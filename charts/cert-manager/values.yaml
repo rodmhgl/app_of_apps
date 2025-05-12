@@ -2,8 +2,6 @@ cert-manager:
   namespace: cert-manager
   enableCertificateOwnerRef: true
 
-  hostedZoneName: "azurelaboratory.com"
-
   crds:
     enabled: true
 

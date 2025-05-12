@@ -11,7 +11,7 @@ spec:
     solvers:
     - dns01:
         azureDNS:
-          hostedZoneName: {{ .Values.hostedZoneName }}
+          hostedZoneName: azurelaboratory.com
           resourceGroupName: rg-azurelaboratory-external-dns
           subscriptionID: fac4f989-bd54-4dcd-91c1-c5da1f3ccf86
           environment: AzurePublicCloud
