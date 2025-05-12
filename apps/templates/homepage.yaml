@@ -6,13 +6,13 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  destination:
-    namespace: homepage
-    server: https://kubernetes.default.svc # https://eztcaloadz-vkgfdjkq.hcp.eastus.azmk8s.io:443
   project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: homepage
   source:
     repoURL: https://github.com/rodmhgl/app_of_apps
-    path: manifests/homepage
+    path: kustomize/homepage/overlays/development
     targetRevision: HEAD
   syncPolicy:
     automated:
