@@ -1,0 +1,14 @@
+kube-prometheus-stack:
+  crds:
+    enabled: true
+  alertmanager:
+    ingress:
+      enabled: true
+      annotations:
+        cert-manager.io/cluster-issuer: "letsencrypt"
+      hosts:
+        - prom.azurelaboratory.com
+      tls:
+        - secretName: prometheus-tls
+          hosts:
+            - prom.azurelaboratory.com
