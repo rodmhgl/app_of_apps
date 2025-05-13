@@ -3,6 +3,7 @@ kube-prometheus-stack:
     enabled: true
   prometheus:
     ingress:
+      ingressClassName: nginx
       enabled: true
       annotations:
         cert-manager.io/cluster-issuer: "letsencrypt"
@@ -14,6 +15,7 @@ kube-prometheus-stack:
             - prometheus.azurelaboratory.com
   grafana:
     ingress:
+      ingressClassName: nginx
       enabled: true
       annotations:
         cert-manager.io/cluster-issuer: "letsencrypt"
