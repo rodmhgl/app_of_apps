@@ -4,10 +4,11 @@ config:
 ingress:
   enabled: true
   annotations:
-    {}
+    cert-manager.io/cluster-issuer: letsencrypt-prod-dns
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
     # kubernetes.io/tls-acme: "true"
 
-  ingressClassName: "nginx"
+  ingressClassName: nginx
 
   # Please refer to https://kubernetes.io/docs/reference/kubernetes-api/service-resources/ingress-v1/#IngressSpec for more information.
   hosts:
@@ -16,7 +17,10 @@ ingress:
       - path: /
         type: ImplementationSpecific
   # -- Ingress TLS configuration
-  tls: []
+  tls:
+    - secretName: headlamp-tls
+      hosts:
+        - headlamp.azurelaboratory.com
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
