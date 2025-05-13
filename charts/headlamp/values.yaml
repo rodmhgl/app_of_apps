@@ -1,26 +1,27 @@
-config:
-  inCluster: true
+headlamp:
+  config:
+    inCluster: true
 
-ingress:
-  enabled: true
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-prod-dns
-    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
-    # kubernetes.io/tls-acme: "true"
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-prod-dns
+      nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+      # kubernetes.io/tls-acme: "true"
 
-  ingressClassName: nginx
+    ingressClassName: nginx
 
-  # Please refer to https://kubernetes.io/docs/reference/kubernetes-api/service-resources/ingress-v1/#IngressSpec for more information.
-  hosts:
-    - host: headlamp.azurelaboratory.com
-      paths:
-      - path: /
-        type: ImplementationSpecific
-  # -- Ingress TLS configuration
-  tls:
-    - secretName: headlamp-tls
-      hosts:
-        - headlamp.azurelaboratory.com
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+    # Please refer to https://kubernetes.io/docs/reference/kubernetes-api/service-resources/ingress-v1/#IngressSpec for more information.
+    hosts:
+      - host: headlamp.azurelaboratory.com
+        paths:
+        - path: /
+          type: ImplementationSpecific
+    # -- Ingress TLS configuration
+    tls:
+      - secretName: headlamp-tls
+        hosts:
+          - headlamp.azurelaboratory.com
+    #  - secretName: chart-example-tls
+    #    hosts:
+    #      - chart-example.local
