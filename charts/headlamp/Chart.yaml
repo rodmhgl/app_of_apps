@@ -1,0 +1,8 @@
+apiVersion: v2
+name: headlamp
+description: Headlamp Dashboard
+version: 1.0.0
+dependencies:
+  - name: headlamp
+    version: "7.10.0"
+    repository: "https://kubernetes-sigs.github.io/headlamp/"

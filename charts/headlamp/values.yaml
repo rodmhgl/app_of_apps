@@ -1,0 +1,22 @@
+config:
+  inCluster: true
+
+ingress:
+  enabled: true
+  annotations:
+    {}
+    # kubernetes.io/tls-acme: "true"
+
+  ingressClassName: "nginx"
+
+  # Please refer to https://kubernetes.io/docs/reference/kubernetes-api/service-resources/ingress-v1/#IngressSpec for more information.
+  hosts:
+    - host: headlamp.azurelaboratory.com
+      paths:
+      - path: /
+        type: ImplementationSpecific
+  # -- Ingress TLS configuration
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
