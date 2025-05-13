@@ -1,0 +1,13 @@
+kubernetes-dashboard:
+  app:
+    ingress:
+      annotations:
+        cert-manager.io/cluster-issuer: "letsencrypt"
+      enabled: true
+      hosts:
+        - localhost
+        - dashboard.azurelaboratory.com
+      ingressClassName: nginx
+      tls:
+        enabled: true
+        secretName: k8s-dashboard-tls
