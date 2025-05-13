@@ -18,22 +18,22 @@ data:
     - Developer:
         - Github:
             - abbr: GH
-              href: https://github.com/
+              href: https://github.com/rodmhgl
   services.yaml: |
     - My First Group:
-        - My First Service:
-            href: http://localhost/
-            description: Homepage is awesome
+        - Manifest k8s Test App:
+            href: http://www.azurelaboratory.com/
+            description: Test App deployed via manifest
 
     - My Second Group:
-        - My Second Service:
-            href: http://localhost/
-            description: Homepage is the best
+        - Kustomize k8s Test App:
+            href: http://kustomize.azurelaboratory.com/
+            description: Test App deployed via Kustomize
 
     - My Third Group:
-        - My Third Service:
-            href: http://localhost/
-            description: Homepage is 😎
+        - Helm k8s Test App:
+            href: http://helm.azurelaboratory.com/
+            description: Test App deployed via Helm
   widgets.yaml: |
     - kubernetes:
         cluster:
@@ -52,7 +52,7 @@ data:
         expanded: true
         cpu: true
         memory: true
-        network: default
+        network: true
     - search:
         provider: duckduckgo
         target: _blank
