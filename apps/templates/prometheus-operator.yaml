@@ -7,12 +7,12 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: prometheus-operator
+    namespace: kube-prometheus-stack
     server: {{ .Values.spec.destination.server }}
   project: default
   source:
     repoURL: https://github.com/rodmhgl/app_of_apps
-    path: charts/prometheus-operator
+    path: charts/kube-prometheus-stack
     targetRevision: HEAD
     helm:
       valueFiles:
