@@ -6,7 +6,7 @@ kube-prometheus-stack:
       ingressClassName: nginx
       enabled: true
       annotations:
-        cert-manager.io/cluster-issuer: "letsencrypt"
+        cert-manager.io/cluster-issuer: "letsencrypt-prod-dns"
       hosts:
         - prometheus.azurelaboratory.com
       tls:
@@ -18,7 +18,7 @@ kube-prometheus-stack:
       ingressClassName: nginx
       enabled: true
       annotations:
-        cert-manager.io/cluster-issuer: "letsencrypt"
+        cert-manager.io/cluster-issuer: "letsencrypt-prod-dns"
       hosts:
         - grafana.azurelaboratory.com
       tls:
