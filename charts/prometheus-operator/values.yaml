@@ -1,4 +1,4 @@
-prometheus:
+kube-prometheus-stack:
   crds:
     enabled: true
   server:
