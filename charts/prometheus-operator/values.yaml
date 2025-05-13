@@ -1,0 +1,12 @@
+prometheus:
+  server:
+    ingress:
+      annotations:
+        cert-manager.io/cluster-issuer: "letsencrypt"
+      enabled: true
+      hosts:
+        - prom.azurelaboratory.com
+      tls:
+        - secretName: prometheus-tls
+          hosts:
+            - prom.azurelaboratory.com
