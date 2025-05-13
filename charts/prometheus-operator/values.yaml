@@ -1,4 +1,6 @@
 prometheus:
+  crds:
+    enabled: true
   server:
     ingress:
       annotations:
