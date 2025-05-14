@@ -14,21 +14,21 @@ spec:
           - path: apps/*/envs/dev
   template:
     metadata:
-      name: "{{index .path.segments 2}}-{{index .path.segments 4}}"
+      name: "{{index .path.segments 1}}-{{index .path.segments 3}}"
       finalizers:
         - resources-finalizer.argocd.argoproj.io
     spec:
       project: default
       destination:
         server: https://kubernetes.default.svc
-        namespace: "{{index .path.segments 2}}-{{index .path.segments 4}}"
+        namespace: "{{index .path.segments 1}}-{{index .path.segments 3}}"
       source:
         repoURL: https://github.com/rodmhgl/app_of_apps
-        path: "charts/{{index .path.segments 2}}"
+        path: "charts/{{index .path.segments 1}}"
         targetRevision: HEAD
         helm:
           valuesFiles:
-            - "{{.path.path}}/values-{{index .path.segments 4}}.yaml"
+            - "{{.path.path}}/values-{{index .path.segments 3}}.yaml"
       syncPolicy:
         automated:
           prune: true
