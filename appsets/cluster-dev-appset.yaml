@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: cluster-dev-appset
+  namespace: argocd
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+    - git:
+        repoURL: https://github.com/rodmhgl/app_of_apps
+        revision: HEAD
+        directories:
+          - path: apps/*/envs/dev
+  template:
+    metadata:
+      name: "{{index .path.segments 2}}-{{index .path.segments 4}}"
+      finalizers:
+        - resources-finalizer.argocd.argoproj.io
+    spec:
+      project: default
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: "{{index .path.segments 2}}-{{index .path.segments 4}}"
+      source:
+        repoURL: https://github.com/rodmhgl/app_of_apps
+        path: "charts/{{index .path.segments 2}}"
+        targetRevision: HEAD
+        helm:
+          valuesFiles:
+            - "{{.path.path}}/values-{{index .path.segments 4}}.yaml"
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
