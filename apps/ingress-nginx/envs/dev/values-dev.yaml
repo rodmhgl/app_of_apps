@@ -3,5 +3,6 @@ commonLabels:
   env: dev
 
 controller:
+  ingressClassName: nginxtwo
   ingressClassResource:
     name: nginxtwo
