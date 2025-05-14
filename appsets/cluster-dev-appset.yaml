@@ -7,10 +7,6 @@ spec:
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
   generators:
-    - list:
-        elements:
-        - app: ingress-nginx
-          namespace: ingress-basic
     - git:
         repoURL: https://github.com/rodmhgl/app_of_apps
         revision: HEAD
@@ -25,7 +21,7 @@ spec:
       project: default
       destination:
         server: https://kubernetes.default.svc
-        namespace: "{{index .path.segments 1}}-{{index .path.segments 3}}"
+        # namespace: "{{index .path.segments 1}}-{{index .path.segments 3}}"
       source:
         repoURL: https://github.com/rodmhgl/app_of_apps
         path: "charts/{{index .path.segments 1}}"
