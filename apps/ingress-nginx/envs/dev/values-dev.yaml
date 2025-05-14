@@ -1,3 +1,5 @@
 commonLabels:
   app: nginx
   env: dev
+
+controller.ingressClass: nginxtwo
