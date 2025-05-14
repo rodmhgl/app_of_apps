@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: cert-manager-all-clusters
+  namespace: argocd
+spec:
+  generators:
+    - clusters: {}
+  template:
+    metadata:
+      name: 'cert-manager-{{name}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/rodmhgl/app_of_apps
+        targetRevision: HEAD
+        path: infra/cert-manager
+        helm:
+          valueFiles:
+            - values-common.yaml
+            - values-{{name}}.yaml
+      destination:
+        server: '{{server}}'
+        namespace: cert-manager
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true
