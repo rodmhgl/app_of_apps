@@ -8,7 +8,7 @@ spec:
     - clusters: {}
   template:
     metadata:
-      name: 'nginx-{{name}}'
+      name: '{{name}}-nginx'
     spec:
       project: default
       source:
