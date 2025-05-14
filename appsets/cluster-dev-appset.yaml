@@ -29,6 +29,7 @@ spec:
         helm:
           valueFiles:
             - "../../{{.path.path}}/values-{{index .path.segments 3}}.yaml"
+            - "values.yaml"
       syncPolicy:
         automated:
           prune: true
