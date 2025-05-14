@@ -1,3 +1,5 @@
+namespaceOverride: ingress-basic
+
 ingress-nginx:
   controller:
     watchIngressWithoutClass: true
