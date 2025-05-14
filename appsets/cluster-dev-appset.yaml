@@ -27,7 +27,7 @@ spec:
         path: "charts/{{index .path.segments 1}}"
         targetRevision: HEAD
         helm:
-          valuesFiles:
+          valueFiles:
             - "{{.path.path}}/values-{{index .path.segments 3}}.yaml"
       syncPolicy:
         automated:
