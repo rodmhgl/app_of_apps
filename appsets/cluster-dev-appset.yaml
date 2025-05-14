@@ -7,6 +7,10 @@ spec:
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
   generators:
+    - list:
+        elements:
+        - app: ingress-nginx
+          namespace: ingress-basic
     - git:
         repoURL: https://github.com/rodmhgl/app_of_apps
         revision: HEAD
